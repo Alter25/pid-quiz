@@ -1,0 +1,8 @@
+<svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+<rect width="200" height="150" fill="white"/>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#2c2c2a" stroke-width="1.5"/>
+</marker>
+</defs>
+<path d="M75,60 L75,90 L100,75 Z" fill="white" stroke="#2c2c2a" stroke-width="1.5"/><path d="M125,60 L125,90 L100,75 Z" fill="white" stroke="#2c2c2a" stroke-width="1.5"/><line x1="55" y1="75" x2="75" y2="75" stroke="#2c2c2a" stroke-width="1.5" fill="none"/><line x1="125" y1="75" x2="145" y2="75" stroke="#2c2c2a" stroke-width="1.5" fill="none"/><path d="M80,60 Q100,45 120,60" stroke="#2c2c2a" stroke-width="1.5" fill="none"/></svg>
