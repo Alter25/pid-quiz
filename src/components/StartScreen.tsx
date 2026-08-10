@@ -1,5 +1,6 @@
 import { allCards } from '../data/cards'
 import type { Palette } from '../theme'
+import type { Mode } from '../App'
 
 const categories = [...new Set(allCards.map(c => c.category))]
 const symbolCount = allCards.filter(c => c.type === 'symbol').length
@@ -7,7 +8,7 @@ const textCount = allCards.filter(c => c.type === 'text').length
 
 type Props = {
   c: Palette
-  onStart: (allMode: boolean) => void
+  onStart: (mode: Mode) => void
   onToggleTheme: () => void
   themeIcon: string
 }
@@ -110,7 +111,7 @@ export function StartScreen({ c, onStart, onToggleTheme, themeIcon }: Props) {
         {/* Buttons */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <button
-            onClick={() => onStart(true)}
+            onClick={() => onStart('all')}
             style={{
               width: '100%', height: 50, borderRadius: 14, border: 'none',
               fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 600,
@@ -122,7 +123,7 @@ export function StartScreen({ c, onStart, onToggleTheme, themeIcon }: Props) {
             Comenzar — Todo ({allCards.length} preguntas)
           </button>
           <button
-            onClick={() => onStart(false)}
+            onClick={() => onStart('symbol')}
             style={{
               width: '100%', height: 44, borderRadius: 14, border: `1.5px solid ${c.cardBorder}`,
               fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600,
@@ -131,6 +132,17 @@ export function StartScreen({ c, onStart, onToggleTheme, themeIcon }: Props) {
             }}
           >
             Solo símbolos ({symbolCount} preguntas)
+          </button>
+          <button
+            onClick={() => onStart('text')}
+            style={{
+              width: '100%', height: 44, borderRadius: 14, border: `1.5px solid ${c.cardBorder}`,
+              fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600,
+              background: c.optionBg, color: c.textSecondary,
+              cursor: 'pointer', transition: 'all 0.2s ease',
+            }}
+          >
+            Solo preguntas ({textCount} preguntas)
           </button>
         </div>
       </div>

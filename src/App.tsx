@@ -1,26 +1,35 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { allCards, shuffleCards } from './data/cards'
 import type { QuizCard } from './data/cards'
 import { QuizCard as QuizCardComponent } from './components/QuizCard'
 import { ResultsScreen } from './components/ResultsScreen'
 import { StartScreen } from './components/StartScreen'
 import { PALETTES } from './theme'
+import { loadTheme, saveTheme, loadProgress, saveProgress, clearProgress, resolveDeck } from './storage'
+import type { Phase } from './storage'
 
-type Phase = 'start' | 'quiz' | 'results'
+export type Mode = 'all' | 'symbol' | 'text'
+
+const restoredProgress = loadProgress()
+const restoredDeck = restoredProgress ? resolveDeck(restoredProgress.deckIds, allCards) : []
+const canRestore =
+  restoredProgress !== null &&
+  restoredDeck.length === restoredProgress.deckIds.length &&
+  (restoredProgress.phase !== 'quiz' || restoredProgress.index < restoredDeck.length)
 
 export default function App() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
-  const [phase, setPhase] = useState<Phase>('start')
-  const [deck, setDeck] = useState<QuizCard[]>([])
-  const [index, setIndex] = useState(0)
-  const [correct, setCorrect] = useState(0)
+  const [theme, setTheme] = useState<'dark' | 'light'>(loadTheme)
+  const [phase, setPhase] = useState<Phase>(canRestore ? restoredProgress!.phase : 'start')
+  const [deck, setDeck] = useState<QuizCard[]>(canRestore ? restoredDeck : [])
+  const [index, setIndex] = useState(canRestore ? restoredProgress!.index : 0)
+  const [correct, setCorrect] = useState(canRestore ? restoredProgress!.correct : 0)
 
   const c = PALETTES[theme]
   const themeIcon = theme === 'dark' ? '☀' : '☾'
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
 
-  function startGame(allMode: boolean) {
-    const cards = allMode ? allCards : allCards.filter(c => c.type === 'symbol')
+  function startGame(mode: Mode) {
+    const cards = mode === 'all' ? allCards : allCards.filter(card => card.type === mode)
     setDeck(shuffleCards(cards))
     setIndex(0)
     setCorrect(0)
@@ -35,6 +44,23 @@ export default function App() {
     if (index + 1 >= deck.length) setPhase('results')
     else setIndex(i => i + 1)
   }, [index, deck.length])
+
+  function restart() {
+    setPhase('start')
+    setDeck([])
+    setIndex(0)
+    setCorrect(0)
+  }
+
+  useEffect(() => { saveTheme(theme) }, [theme])
+
+  useEffect(() => {
+    if (phase === 'start') {
+      clearProgress()
+      return
+    }
+    saveProgress({ phase, deckIds: deck.map(card => card.id), index, correct })
+  }, [phase, deck, index, correct])
 
   return (
     <div style={{
@@ -64,7 +90,7 @@ export default function App() {
           correct={correct}
           total={deck.length}
           c={c}
-          onRestart={() => setPhase('start')}
+          onRestart={restart}
           onToggleTheme={toggleTheme}
           themeIcon={themeIcon}
         />

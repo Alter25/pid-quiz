@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { QuizCard as QuizCardType } from '../data/cards'
 import type { Palette } from '../theme'
+import { ImageWithRetry } from './ImageWithRetry'
 
 type Props = {
   card: QuizCardType
@@ -116,9 +117,10 @@ export function QuizCard({ card, cardNumber, total, c, onAnswer, onNext }: Props
             background: c.imageBg, border: `1px solid ${c.cardBorder}`,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            <img
+            <ImageWithRetry
               src={`/svgs/${card.svgFile}`}
               alt="Símbolo P&ID"
+              c={c}
               style={{ maxWidth: '60%', maxHeight: '60%', objectFit: 'contain' }}
             />
           </div>
