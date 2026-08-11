@@ -5,4 +5,4 @@
 <path d="M2 1L8 5L2 9" fill="none" stroke="#2c2c2a" stroke-width="1.5"/>
 </marker>
 </defs>
-<line x1="100" y1="20" x2="100" y2="40" stroke="#2c2c2a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/><path d="M80,45 Q120,45 120,65 Q120,85 80,85" stroke="#2c2c2a" stroke-width="1.5" fill="none" stroke-width="2.5"/><rect x="70" y="80" width="16" height="14" fill="white" stroke="#2c2c2a" stroke-width="1.5"/><line x1="78" y1="94" x2="78" y2="115" stroke="#2c2c2a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/></svg>
+<line x1="100" y1="20" x2="100" y2="40" stroke="#2c2c2a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/><path d="M80,45 Q120,45 120,65 Q120,85 80,85" stroke="#2c2c2a" fill="none" stroke-width="2.5"/><rect x="70" y="80" width="16" height="14" fill="white" stroke="#2c2c2a" stroke-width="1.5"/><line x1="78" y1="94" x2="78" y2="115" stroke="#2c2c2a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/></svg>
