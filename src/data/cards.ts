@@ -26,7 +26,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba centrífuga', correct: false },
       { id: 'd', text: 'Turbina con motor', correct: false },
     ],
-    explanation: 'El eyector/inyector se distingue por su rectángulo + triángulo relleno. No tiene partes rotativas; usa un chorro de fluido motriz para arrastrar otro fluido por efecto Venturi.',
+    explanation: 'Un rectángulo (cuerpo del eyector) seguido de un triángulo COMPLETAMENTE RELLENO de negro (la tobera convergente) antes de la línea de descarga. No tiene eje, aspas ni ningún componente rotativo dibujado, a diferencia del trapezoide del compresor/turbina o el círculo con rombo de la turbina con motor. Funciona sin partes móviles: un chorro de fluido motriz a alta velocidad pasa por la tobera y arrastra un segundo fluido por efecto Venturi (diferencia de presión), por lo que se usa en sistemas de vacío, purga de líneas y transferencia de fluidos donde no conviene una bomba mecánica.',
     category: 'Equipos',
   },
   {
@@ -40,7 +40,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Turbina con motor', correct: false },
       { id: 'd', text: 'Bomba centrífuga', correct: false },
     ],
-    explanation: 'Trapezoide más ancho de un lado con una pequeña flecha en la esquina superior. Es el símbolo genérico de máquina de flujo axial.',
+    explanation: 'Un trapezoide sin relleno, más ancho de un lado que del otro (a diferencia del rectángulo del eyector o el círculo de la turbina con motor), con una pequeña flecha de entrada en la esquina superior cercana al lado ancho. Es el símbolo genérico ISA para una máquina rotativa de flujo axial: puede representar tanto un compresor (aumenta la presión de un gas) como una turbina (extrae energía de un fluido en expansión); el contexto del P&ID (tag, servicio, dirección del flujo) determina cuál es. No debe confundirse con la turbina accionada por motor (e003), que usa un círculo con un rombo interno en vez de un trapezoide.',
     category: 'Equipos',
   },
   {
@@ -54,7 +54,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Compresor / Turbina', correct: false },
       { id: 'd', text: 'Bomba de engranes', correct: false },
     ],
-    explanation: 'Círculo con un rombo (cuadrado rotado 45°) relleno de negro en el centro. El rombo interno representa el acople motor-turbina.',
+    explanation: 'Un círculo (la carcasa) con un rombo (cuadrado rotado 45°) relleno de negro en el centro, que representa el acoplamiento rígido entre el eje de la turbina y el motor o generador que impulsa o es impulsado por ella. El círculo simple lo distingue de la bomba centrífuga (círculo sin relleno interno, con una boquilla rectangular de descarga) y de la bomba de vacío (círculo con dos bridas laterales pero sin nada dentro); el relleno sólido central lo distingue del trapezoide sin relleno del compresor/turbina genérico (e002).',
     category: 'Equipos',
   },
   {
@@ -68,7 +68,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba centrífuga', correct: false },
       { id: 'd', text: 'Eyector / Inyector', correct: false },
     ],
-    explanation: 'Tres pétalos curvos distribuidos a 120° sin carcasa. Tiene 3 pétalos en vez de 4, representando un ventilador axial de tres álabes.',
+    explanation: 'Tres pétalos curvos idénticos, rotados 120° entre sí alrededor de un punto central, sin ninguna carcasa ni círculo que los envuelva. Representa un ventilador o hélice axial de tres álabes. La cuenta de pétalos es la única diferencia real con el símbolo de cuatro aspas (e005): 3 pétalos a 120° = ventilador triple, 4 pétalos a 90° formando una cruz = ventilador de cuatro aspas. Ninguno de los dos lleva boquillas de succión/descarga dibujadas como las bombas centrífugas, porque suelen representarse dentro de un ducto más grande en el P&ID real.',
     category: 'Equipos',
   },
   {
@@ -82,7 +82,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Compresor / Turbina', correct: false },
       { id: 'd', text: 'Bomba horizontal', correct: false },
     ],
-    explanation: 'Cuatro pétalos curvos a 90° formando una cruz/pinwheel. Tiene 4 pétalos en vez de 3.',
+    explanation: 'Cuatro pétalos curvos rotados 90° entre sí, formando una cruz o "pinwheel" alrededor de un punto central, sin carcasa dibujada. Es la variante de cuatro álabes del símbolo de aspas; se diferencia de la triple (e004) únicamente por tener un pétalo más y por su simetría de 90° en vez de 120°. Igual que la triple, representa un ventilador o impulsor axial sin voluta ni boquillas, a diferencia del trapezoide del compresor/turbina (e002) o el círculo con boquilla de la bomba horizontal (e011).',
     category: 'Equipos',
   },
   {
@@ -96,7 +96,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba centrífuga (descarga inferior)', correct: false },
       { id: 'd', text: 'Bomba centrífuga (variante posterior)', correct: false },
     ],
-    explanation: 'La boquilla de descarga sale por la parte de arriba del círculo/voluta.',
+    explanation: 'Un círculo (la voluta/carcasa) con un pequeño rectángulo (la boquilla de descarga) unido en la parte de ARRIBA, del cual sale una línea con flecha apuntando hacia arriba, indicando el sentido del flujo de salida. La succión entra por una línea simple, sin flecha, desde el costado izquierdo del círculo. Es una de cuatro variantes de bomba centrífuga en el set (e006-e009) que solo se diferencian por la posición de la boquilla de descarga: arriba (esta), al costado (e007), abajo (e008), o con succión superior y conexión al costado opuesto (e009).',
     category: 'Equipos',
   },
   {
@@ -110,7 +110,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba centrífuga (descarga inferior)', correct: false },
       { id: 'd', text: 'Bomba centrífuga (variante posterior)', correct: false },
     ],
-    explanation: 'La boquilla de descarga sale por el costado derecho del círculo/voluta.',
+    explanation: 'Círculo (voluta) con la boquilla de descarga unida al costado DERECHO, a la misma altura que el centro del círculo, con la flecha de salida apuntando hacia la derecha. La succión, sin flecha, entra desde la izquierda. Se distingue de la variante superior (e006) porque la boquilla sale de lado y no de arriba, y de la inferior (e008) porque no sale por abajo; es la disposición más común en bombas centrífugas horizontales de una sola etapa.',
     category: 'Equipos',
   },
   {
@@ -124,7 +124,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba centrífuga (descarga lateral)', correct: false },
       { id: 'd', text: 'Bomba centrífuga (variante posterior)', correct: false },
     ],
-    explanation: 'La boquilla de descarga sale por la parte inferior del círculo/voluta.',
+    explanation: 'Círculo (voluta) con la boquilla de descarga unida en la parte de ABAJO, y la flecha de salida apuntando hacia abajo. La succión entra sin flecha desde el costado izquierdo, igual que en las otras variantes. Es la única de las cuatro variantes (e006-e009) donde toda la geometría de la voluta y la succión quedan por encima de la línea de descarga, útil para instalaciones donde la tubería de salida va directo a un dren o nivel inferior.',
     category: 'Equipos',
   },
   {
@@ -138,7 +138,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba centrífuga (descarga superior)', correct: false },
       { id: 'd', text: 'Bomba centrífuga (descarga inferior)', correct: false },
     ],
-    explanation: 'Es la única variante donde la succión entra por arriba en vez de por el costado, con descarga al lado opuesto.',
+    explanation: 'A diferencia de las otras tres variantes (e006-e008), aquí la succión entra por ARRIBA del círculo (con flecha apuntando hacia abajo, hacia la voluta) en vez de por el costado, y la boquilla de conexión queda del lado IZQUIERDO, el opuesto al de la variante lateral (e007). Es la única variante del set con esta combinación de succión superior y conexión lateral, por lo que conviene identificarla por descarte una vez reconocidas las otras tres.',
     category: 'Equipos',
   },
   {
@@ -152,7 +152,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba horizontal', correct: false },
       { id: 'd', text: 'Turbina con motor', correct: false },
     ],
-    explanation: 'Rectángulo vertical con DOS círculos huecos apilados dentro representando los dos engranes. La de vacío tiene un solo círculo grande con bridas a los lados.',
+    explanation: 'Rectángulo vertical que contiene DOS círculos huecos (sin relleno) apilados uno sobre el otro, representando el par de engranes que giran engranados dentro de la carcasa. La succión (línea simple) entra por la izquierda y la descarga (con flecha) sale por la derecha, a la altura donde se juntan los dos engranes. Se diferencia de la bomba de vacío (e016), que tiene un solo círculo grande sin nada adentro, y de la bomba horizontal (e011), cuyos círculos están en los extremos de una barra y no apilados dentro de un rectángulo. Es una bomba de desplazamiento positivo típica para aceites lubricantes y fluidos viscosos.',
     category: 'Equipos',
   },
   {
@@ -166,21 +166,21 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba de cavidad progresiva', correct: false },
       { id: 'd', text: 'Bomba de vacío', correct: false },
     ],
-    explanation: 'Forma de hueso/mancuerna con dos círculos en los extremos de una barra horizontal. Los círculos están en extremos, no apilados.',
+    explanation: 'Forma de "hueso" o mancuerna: dos círculos, uno en cada extremo, unidos por una barra rectangular horizontal, con succión sin flecha entrando por el círculo izquierdo y descarga con flecha saliendo del círculo derecho. La clave para no confundirla con la de engranes (e010) es que aquí los círculos están en los EXTREMOS de una barra, no apilados uno sobre otro dentro de un rectángulo; y a diferencia de la de vacío (e016), sus dos círculos son de tamaño más pequeño y están unidos por una barra sólida en vez de bridas independientes.',
     category: 'Equipos',
   },
   {
     id: 'e012',
     type: 'symbol',
     svgFile: 'e012_cavidad_progresiva.svg',
-    question: '¿Qué símbolo P&ID es este?',
+    question: '¿Qué símbolo P&ID es este? (puede tener más de un nombre correcto)',
     options: [
       { id: 'a', text: 'Bomba de cavidad progresiva', correct: true },
-      { id: 'b', text: 'Bomba de tornillo (zigzag)', correct: false },
+      { id: 'b', text: 'Bomba de tornillo (zigzag)', correct: true },
       { id: 'c', text: 'Bomba de tornillo (forma S)', correct: false },
       { id: 'd', text: 'Bomba horizontal', correct: false },
     ],
-    explanation: 'Rectángulo + zigzag lateral que representa el rotor helicoidal. Se distingue del tornillo zigzag más por contexto de servicio (fluidos viscosos/con sólidos).',
+    explanation: 'Rectángulo con una línea en zigzag (el rotor helicoidal) unida al costado, succión sin flecha a la izquierda y descarga con flecha a la derecha. Este símbolo simplificado es compartido tanto por la bomba de cavidad progresiva (un rotor helicoidal excéntrico que gira dentro de un estator de caucho, típica para crudo pesado, lodos o fluidos con sólidos) como por la bomba de tornillo tipo zigzag: en la práctica ambas se distinguen por el tag y la nota de servicio del P&ID, no por el símbolo, así que aquí se aceptan los dos nombres como correctos. Se diferencia de la de tornillo en forma de "S" (e013) porque esta usa una curva continua en vez de un zigzag anguloso, y de la bomba horizontal (e011) porque esa no lleva ningún zigzag, solo dos círculos en los extremos de una barra.',
     category: 'Equipos',
   },
   {
@@ -194,21 +194,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba de cavidad progresiva', correct: false },
       { id: 'd', text: 'Bomba de sumidero', correct: false },
     ],
-    explanation: 'Curva continua en forma de "S" o gancho con una pequeña boquilla en el extremo inferior. A diferencia del tipo zigzag, usa una curva continua.',
-    category: 'Equipos',
-  },
-  {
-    id: 'e014',
-    type: 'symbol',
-    svgFile: 'e014_tornillo_zigzag.svg',
-    question: '¿Qué símbolo P&ID es este?',
-    options: [
-      { id: 'a', text: 'Bomba de tornillo (zigzag)', correct: true },
-      { id: 'b', text: 'Bomba de cavidad progresiva', correct: false },
-      { id: 'c', text: 'Bomba de tornillo (forma S)', correct: false },
-      { id: 'd', text: 'Bomba vertical', correct: false },
-    ],
-    explanation: 'Rectángulo conectado a una línea en zigzag (resorte). Comparte símbolo con la de cavidad progresiva; el nombre exacto depende de la convención de la planta.',
+    explanation: 'Una curva continua en forma de "S" o gancho, sin ángulos rectos, que conecta la línea de entrada superior con una pequeña boquilla rectangular en la parte inferior, de la cual sale la línea de descarga. La curva suave y continua es lo que la distingue del tornillo en zigzag/cavidad progresiva (e012), que usa segmentos rectos angulados en vez de una curva; ambas representan bombas de desplazamiento positivo tipo tornillo, usadas en servicios viscosos donde una bomba centrífuga perdería eficiencia.',
     category: 'Equipos',
   },
   {
@@ -222,7 +208,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba vertical con colador', correct: false },
       { id: 'd', text: 'Bomba horizontal', correct: false },
     ],
-    explanation: 'Cilindro vertical sobre una base trapezoidal ANCHA, con descarga lateral desde arriba. La base más ancha la distingue de la bomba vertical simple.',
+    explanation: 'Un cilindro vertical (la columna de succión) apoyado sobre una base trapezoidal ANCHA (el tazón o campana de succión sumergido), con la descarga saliendo lateralmente desde la parte alta del cilindro. El ancho pronunciado de la base es lo que la distingue de la bomba vertical simple (e017) y de la vertical con colador (e018), cuyas bases son mucho más angostas. Se usa para vaciar fosos, sumideros o tanques de drenaje, con el motor típicamente montado arriba, fuera del líquido bombeado.',
     category: 'Equipos',
   },
   {
@@ -236,7 +222,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba de engranes', correct: false },
       { id: 'd', text: 'Bomba de sumidero', correct: false },
     ],
-    explanation: 'Círculo grande con dos pequeños cilindros (bridas) sobresaliendo simétricamente a ambos lados. No tiene ninguna figura sólida dentro del círculo.',
+    explanation: 'Un círculo grande sin ninguna figura sólida ni hueca dentro, con dos pequeños rectángulos (bridas de succión y descarga) sobresaliendo simétricamente a ambos lados del círculo. La ausencia total de marcas internas (ni engranes, ni rombo, ni zigzag) es la clave para distinguirla de la bomba de engranes (e010, con dos círculos internos) y de la turbina con motor (e003, con un rombo relleno). Se usa para generar vacío o mover grandes volúmenes de gas a baja presión, por ejemplo en sistemas de eyectores o torres de destilación al vacío.',
     category: 'Equipos',
   },
   {
@@ -250,7 +236,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba vertical con colador', correct: false },
       { id: 'd', text: 'Bomba horizontal', correct: false },
     ],
-    explanation: 'Cilindro vertical sobre un vástago delgado con base angosta. Sin rejilla/colador arriba, a diferencia de la variante con colador.',
+    explanation: 'Un cilindro vertical corto apoyado sobre un vástago delgado que baja hasta una base angosta (rectángulo redondeado), con la descarga saliendo lateralmente cerca de la base. No lleva ninguna rejilla ni marca adicional en la parte superior, lo que la distingue de la variante con colador (e018), que sí agrega un pequeño rectángulo con líneas horizontales arriba. También se diferencia de la de sumidero (e015) por tener una base mucho más angosta en vez de un tazón ancho.',
     category: 'Equipos',
   },
   {
@@ -264,7 +250,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Bomba de sumidero', correct: false },
       { id: 'd', text: 'Bomba de engranes', correct: false },
     ],
-    explanation: 'Igual que la bomba vertical simple pero con un pequeño rectángulo con líneas horizontales (rejilla/colador) en la parte superior para filtrar sólidos.',
+    explanation: 'Es idéntica a la bomba vertical simple (e017) —cilindro vertical, vástago delgado y base angosta con descarga lateral— pero agrega en la parte superior un pequeño rectángulo con tres líneas horizontales finas que representan una rejilla o colador para filtrar sólidos antes de que entren a la succión. Esa rejilla es la única diferencia visual respecto a e017, y es lo primero que hay que buscar para identificar esta variante.',
     category: 'Equipos',
   },
   // Válvulas
@@ -272,14 +258,14 @@ const symbolCards: QuizCard[] = [
     id: 'v001',
     type: 'symbol',
     svgFile: 'v001_simbolo_general.svg',
-    question: '¿Qué símbolo de válvula es este?',
+    question: '¿Qué símbolo de válvula es este? (puede tener más de un nombre correcto)',
     options: [
       { id: 'a', text: 'Símbolo general de válvula', correct: true },
-      { id: 'b', text: 'Válvula de compuerta', correct: false },
+      { id: 'b', text: 'Válvula de compuerta', correct: true },
       { id: 'c', text: 'Válvula de diafragma', correct: false },
       { id: 'd', text: 'Válvula de bola', correct: false },
     ],
-    explanation: 'Bowtie simple sin marcas internas ni líneas dobles laterales. Visualmente idéntico a la compuerta; se usa cuando no se especifica el tipo exacto.',
+    explanation: 'Un "bowtie": dos triángulos sin relleno unidos por su vértice, sin ninguna marca interna (ni círculo, ni arco, ni trapecio) y sin líneas dobles laterales (bridas). Este es, a la vez, el símbolo GENÉRICO de válvula (se usa cuando el P&ID no especifica el tipo exacto) y el símbolo específico de la válvula de COMPUERTA: como la compuerta no tiene ningún mecanismo visible desde el exterior (la cuña se desliza dentro del cuerpo, perpendicular al flujo), su representación ISA es precisamente ese bowtie sin adornos, por lo que ambos nombres son correctos para esta imagen. Funcionalmente, la compuerta es solo todo/nada (no se usa para regular): tiene baja caída de presión totalmente abierta, pero sufre erosión de la cuña y el asiento si se usa parcialmente abierta. Se usa en líneas principales de crudo y para aislar bombas o intercambiadores durante mantenimiento.',
     category: 'Válvulas',
   },
   {
@@ -293,7 +279,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de compuerta', correct: false },
       { id: 'd', text: 'Válvula de globo', correct: false },
     ],
-    explanation: 'Bowtie con un arco curvo en la parte superior que representa el diafragma flexible, el cual sella contra el asiento sin partes metálicas en contacto con el fluido. Función ON/OFF y algo de regulación. Usos típicos: servicios químicos, corrosivos o con sólidos en suspensión (lodos).',
+    explanation: 'Bowtie con un arco curvo dibujado directamente sobre la parte superior del cuerpo, que representa el diafragma flexible: éste sella contra el asiento sin que ninguna parte metálica toque el fluido. A diferencia del símbolo general/compuerta (sin ninguna marca) y de la reguladora auto-operada (v007, que agrega un actuador tipo campana separado, conectado por una línea vertical corta), aquí el arco forma parte del cuerpo mismo, sin actuador externo dibujado. Función principalmente ON/OFF con algo de regulación. Usos típicos: servicios químicos, corrosivos o con sólidos en suspensión (lodos), y aplicaciones sanitarias donde no puede haber piezas metálicas en contacto con el producto.',
     category: 'Válvulas',
   },
   {
@@ -307,7 +293,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de globo', correct: false },
       { id: 'd', text: 'Válvula de diafragma', correct: false },
     ],
-    explanation: 'Bowtie con una línea vertical recta continua y delgada que atraviesa todo el símbolo de arriba a abajo. Representa el vástago tipo aguja sin manija ni actuador.',
+    explanation: 'Bowtie con una línea vertical recta, delgada y continua que atraviesa todo el símbolo de arriba a abajo, representando el vástago cónico tipo aguja que se desliza dentro de un asiento igualmente cónico, sin manija ni actuador dibujados. Se usa para regulación fina de caudales pequeños en líneas de instrumentación, muestreo, purga y drenajes de manómetros, donde el ajuste preciso del cono permite controlar flujos muy bajos que una válvula de globo normal no podría dosificar con la misma exactitud.',
     category: 'Válvulas',
   },
   {
@@ -321,7 +307,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula plug', correct: false },
       { id: 'd', text: 'Símbolo general', correct: false },
     ],
-    explanation: 'Bowtie entre líneas dobles laterales (bridas) con un círculo HUECO (sin relleno) en el centro que representa la esfera perforada. La de globo tiene el círculo RELLENO de negro. Cierre hermético (bubble-tight) con giro de ¼ de vuelta; función principalmente ON/OFF, bajo mantenimiento. Usos típicos: gas, líneas que requieren hermeticidad total y sistemas de paro de emergencia (ESD).',
+    explanation: 'Bowtie entre líneas dobles laterales (bridas) con un círculo HUECO (sin relleno) en el centro que representa la esfera perforada. La de globo tiene el círculo RELLENO de negro, y la plug tiene un trapecio en vez de un círculo. Cierre hermético (bubble-tight) con giro de solo ¼ de vuelta; función principalmente ON/OFF, bajo mantenimiento y larga vida útil. Usos típicos: gas, líneas que requieren hermeticidad total y sistemas de paro de emergencia (ESD).',
     category: 'Válvulas',
   },
   {
@@ -335,7 +321,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de globo', correct: false },
       { id: 'd', text: 'Válvula de mariposa', correct: false },
     ],
-    explanation: 'Bowtie entre líneas dobles laterales con un trapecio (tapón cónico o cilíndrico perforado) en el centro en lugar de un círculo. El trapecio es la clave para distinguirla de la de bola. Cierre hermético y robusta, buena para servicios con partículas. Usos típicos: gas natural, crudo con sólidos y servicios que requieren alta confiabilidad de sello.',
+    explanation: 'Bowtie entre líneas dobles laterales con un trapecio (tapón cónico o cilíndrico perforado) en el centro en lugar de un círculo. El trapecio es la clave para distinguirla de la de bola (círculo hueco) y de la de globo (círculo relleno). Cierre hermético y robusto, buena para servicios con partículas; puede ser de puerto completo (full port) o reducido. Usos típicos: gas natural, crudo con sólidos y servicios que requieren alta confiabilidad de sello.',
     category: 'Válvulas',
   },
   {
@@ -349,7 +335,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula reguladora auto-operada', correct: false },
       { id: 'd', text: 'Válvula de aguja', correct: false },
     ],
-    explanation: 'Triángulo vertical con resorte en zigzag arriba y línea de descarga angulada. El resorte (zigzag) es la clave; la de ángulo no lo lleva. Protege equipos de sobrepresión liberando fluido automáticamente al alcanzar la presión de disparo (set pressure), descargando a la atmósfera o al flare. Es un dispositivo de seguridad crítico, inspeccionado y certificado periódicamente (API 526, 520/521).',
+    explanation: 'Triángulo vertical con un resorte en zigzag arriba y una línea de descarga angulada saliendo hacia un costado. El resorte (zigzag) es la clave: la válvula de ángulo (v009) tiene el mismo triángulo con conexión en "L" pero SIN resorte. Protege equipos de sobrepresión liberando fluido automáticamente al alcanzar la presión de disparo (set pressure), descargando a la atmósfera o al sistema de flare mediante cierre por resorte calibrado. Es un dispositivo de seguridad crítico, inspeccionado y certificado periódicamente (API 526, 520/521), usado en recipientes a presión, calderas y líneas de vapor.',
     category: 'Válvulas',
   },
   {
@@ -363,7 +349,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de seguridad y alivio', correct: false },
       { id: 'd', text: 'Válvula de diafragma', correct: false },
     ],
-    explanation: 'Bowtie con actuador tipo diafragma en forma de campana arriba, conectado directamente al vástago, sin línea de retroalimentación externa.',
+    explanation: 'Bowtie con un actuador tipo diafragma en forma de campana arriba, conectado directamente al vástago por una línea vertical corta, sin ninguna línea de retroalimentación externa. La propia presión de la línea de proceso, sensada internamente en el domo, autorregula la apertura sin necesidad de controlador ni señal externa. Se usa en servicios simples donde basta con mantener una presión aproximada aguas abajo (por ejemplo, reguladores de gas combustible de baja exigencia). Se diferencia de la reguladora con piloto externo (v010) porque esa variante agrega una línea adicional que sale del domo y recorre un tramo hasta conectarse de nuevo a la tubería aguas abajo.',
     category: 'Válvulas',
   },
   {
@@ -377,7 +363,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula plug', correct: false },
       { id: 'd', text: 'Símbolo general', correct: false },
     ],
-    explanation: 'Bowtie entre líneas dobles laterales con un círculo COMPLETAMENTE RELLENO de negro en el centro. El relleno negro es la diferencia clave respecto a la de bola (hueca). El flujo cambia de dirección internamente, lo que da mayor caída de presión pero buen control de estrangulamiento. Usos típicos: líneas de vapor, control manual de flujo y drenajes.',
+    explanation: 'Bowtie entre líneas dobles laterales con un círculo COMPLETAMENTE RELLENO de negro en el centro. El relleno negro es la diferencia clave respecto a la de bola (hueca) y a la plug (trapecio en vez de círculo). El flujo cambia de dirección internamente dentro del cuerpo, lo que produce mayor caída de presión que una compuerta pero permite buen control de estrangulamiento gracias al diseño del tapón/asiento. Usos típicos: líneas de vapor, control manual de flujo, drenajes y sistemas de utilities.',
     category: 'Válvulas',
   },
   {
@@ -391,7 +377,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de aguja', correct: false },
       { id: 'd', text: 'Símbolo general', correct: false },
     ],
-    explanation: 'Triángulo simple con conexión en ángulo de 90° formando una "L". Sin resorte en zigzag arriba, a diferencia de la válvula de seguridad/alivio.',
+    explanation: 'Triángulo simple con la línea de salida conectada en ángulo de 90° respecto a la entrada, formando una "L", y SIN el resorte en zigzag que sí lleva la válvula de seguridad/alivio (v006) en la parte superior. Internamente es, de hecho, una variante del cuerpo tipo globo doblada 90°, donde entrada y salida quedan en ángulo recto en vez de en línea recta. Se usa donde conviene combinar el cambio de dirección de la tubería con la válvula misma —ahorrando un codo— y ofrece mejor resistencia a la erosión que un globo recto en servicios con flujo turbulento o con sólidos.',
     category: 'Válvulas',
   },
   {
@@ -405,7 +391,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de seguridad y alivio', correct: false },
       { id: 'd', text: 'Válvula de diafragma', correct: false },
     ],
-    explanation: 'Igual que la reguladora auto-operada pero con una línea de piloto externa visible que toma señal de presión desde aguas abajo de la tubería.',
+    explanation: 'Igual que la reguladora auto-operada (v007) —bowtie con actuador tipo campana arriba— pero con una línea de piloto adicional que sale del domo, recorre un tramo por fuera del cuerpo y regresa para tomar la señal de presión directamente de la tubería aguas abajo, en vez de sensarla internamente. Esa línea de piloto externa, visible como un trazo que rodea el costado derecho del símbolo, es la única diferencia con la reguladora auto-operada, y permite una regulación más precisa porque la señal de control viene del punto exacto que se quiere mantener a presión constante.',
     category: 'Válvulas',
   },
   {
@@ -419,21 +405,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula plug', correct: false },
       { id: 'd', text: 'Válvula de globo', correct: false },
     ],
-    explanation: 'Único símbolo con línea diagonal en vez de bowtie, con un pequeño círculo en el punto medio (eje/disco visto de canto). Dos líneas dobles laterales (bridas). Es compacta y ligera frente a compuerta o globo (menor costo en diámetros grandes), aunque genera pérdida de carga moderada incluso abierta. Usos típicos: agua de enfriamiento, aire y líneas de gran diámetro con baja presión.',
-    category: 'Válvulas',
-  },
-  {
-    id: 'v012',
-    type: 'symbol',
-    svgFile: 'v012_compuerta.svg',
-    question: '¿Qué símbolo de válvula es este?',
-    options: [
-      { id: 'a', text: 'Válvula de compuerta', correct: true },
-      { id: 'b', text: 'Símbolo general de válvula', correct: false },
-      { id: 'c', text: 'Válvula de diafragma', correct: false },
-      { id: 'd', text: 'Válvula de aguja', correct: false },
-    ],
-    explanation: 'Bowtie simple sin marcas internas ni líneas dobles. Visualmente idéntico al símbolo general; en práctica se distingue por el tag o nota del P&ID. Función solo ON/OFF (no se usa para regular): baja caída de presión totalmente abierta, pero sufre erosión de la cuña y el asiento si se usa parcialmente abierta. Usos típicos: líneas principales de crudo y aislamiento de bombas o intercambiadores durante mantenimiento.',
+    explanation: 'Único símbolo con una línea diagonal en vez de bowtie, con un pequeño círculo en el punto medio que representa el eje/disco visto de canto, entre dos líneas dobles laterales (bridas). Es compacta y ligera frente a compuerta o globo (menor costo y peso en diámetros grandes), aunque genera una pérdida de carga moderada incluso completamente abierta porque el disco siempre queda dentro del flujo. Usos típicos: agua de enfriamiento, aire y líneas de gran diámetro con baja o media presión, donde el disco giratorio de ¼ de vuelta permite tanto todo/nada como regulación.',
     category: 'Válvulas',
   },
 ]
