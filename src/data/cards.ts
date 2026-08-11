@@ -293,7 +293,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de compuerta', correct: false },
       { id: 'd', text: 'Válvula de globo', correct: false },
     ],
-    explanation: 'Bowtie con un arco curvo en la parte superior uniendo ambos triángulos. El arco representa el diafragma flexible que se presiona para cerrar el paso.',
+    explanation: 'Bowtie con un arco curvo en la parte superior que representa el diafragma flexible, el cual sella contra el asiento sin partes metálicas en contacto con el fluido. Función ON/OFF y algo de regulación. Usos típicos: servicios químicos, corrosivos o con sólidos en suspensión (lodos).',
     category: 'Válvulas',
   },
   {
@@ -321,7 +321,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula plug', correct: false },
       { id: 'd', text: 'Símbolo general', correct: false },
     ],
-    explanation: 'Bowtie entre líneas dobles laterales (bridas) con un círculo HUECO (sin relleno) en el centro. La de globo tiene el círculo RELLENO de negro.',
+    explanation: 'Bowtie entre líneas dobles laterales (bridas) con un círculo HUECO (sin relleno) en el centro que representa la esfera perforada. La de globo tiene el círculo RELLENO de negro. Cierre hermético (bubble-tight) con giro de ¼ de vuelta; función principalmente ON/OFF, bajo mantenimiento. Usos típicos: gas, líneas que requieren hermeticidad total y sistemas de paro de emergencia (ESD).',
     category: 'Válvulas',
   },
   {
@@ -335,7 +335,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de globo', correct: false },
       { id: 'd', text: 'Válvula de mariposa', correct: false },
     ],
-    explanation: 'Bowtie entre líneas dobles laterales con un trapecio (tapón cónico) en el centro en lugar de un círculo. El trapecio es la clave para distinguirla de la de bola.',
+    explanation: 'Bowtie entre líneas dobles laterales con un trapecio (tapón cónico o cilíndrico perforado) en el centro en lugar de un círculo. El trapecio es la clave para distinguirla de la de bola. Cierre hermético y robusta, buena para servicios con partículas. Usos típicos: gas natural, crudo con sólidos y servicios que requieren alta confiabilidad de sello.',
     category: 'Válvulas',
   },
   {
@@ -349,7 +349,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula reguladora auto-operada', correct: false },
       { id: 'd', text: 'Válvula de aguja', correct: false },
     ],
-    explanation: 'Triángulo vertical con resorte en zigzag arriba y línea de descarga angulada. El resorte (zigzag) es la clave; la de ángulo no lo lleva.',
+    explanation: 'Triángulo vertical con resorte en zigzag arriba y línea de descarga angulada. El resorte (zigzag) es la clave; la de ángulo no lo lleva. Protege equipos de sobrepresión liberando fluido automáticamente al alcanzar la presión de disparo (set pressure), descargando a la atmósfera o al flare. Es un dispositivo de seguridad crítico, inspeccionado y certificado periódicamente (API 526, 520/521).',
     category: 'Válvulas',
   },
   {
@@ -377,7 +377,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula plug', correct: false },
       { id: 'd', text: 'Símbolo general', correct: false },
     ],
-    explanation: 'Bowtie entre líneas dobles laterales con un círculo COMPLETAMENTE RELLENO de negro en el centro. El relleno negro es la diferencia clave respecto a la de bola (hueca).',
+    explanation: 'Bowtie entre líneas dobles laterales con un círculo COMPLETAMENTE RELLENO de negro en el centro. El relleno negro es la diferencia clave respecto a la de bola (hueca). El flujo cambia de dirección internamente, lo que da mayor caída de presión pero buen control de estrangulamiento. Usos típicos: líneas de vapor, control manual de flujo y drenajes.',
     category: 'Válvulas',
   },
   {
@@ -419,7 +419,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula plug', correct: false },
       { id: 'd', text: 'Válvula de globo', correct: false },
     ],
-    explanation: 'Único símbolo con línea diagonal en vez de bowtie, con un pequeño círculo en el punto medio (eje/disco visto de canto). Dos líneas dobles laterales (bridas).',
+    explanation: 'Único símbolo con línea diagonal en vez de bowtie, con un pequeño círculo en el punto medio (eje/disco visto de canto). Dos líneas dobles laterales (bridas). Es compacta y ligera frente a compuerta o globo (menor costo en diámetros grandes), aunque genera pérdida de carga moderada incluso abierta. Usos típicos: agua de enfriamiento, aire y líneas de gran diámetro con baja presión.',
     category: 'Válvulas',
   },
   {
@@ -433,7 +433,7 @@ const symbolCards: QuizCard[] = [
       { id: 'c', text: 'Válvula de diafragma', correct: false },
       { id: 'd', text: 'Válvula de aguja', correct: false },
     ],
-    explanation: 'Bowtie simple sin marcas internas ni líneas dobles. Visualmente idéntico al símbolo general; en práctica se distingue por el tag o nota del P&ID.',
+    explanation: 'Bowtie simple sin marcas internas ni líneas dobles. Visualmente idéntico al símbolo general; en práctica se distingue por el tag o nota del P&ID. Función solo ON/OFF (no se usa para regular): baja caída de presión totalmente abierta, pero sufre erosión de la cuña y el asiento si se usa parcialmente abierta. Usos típicos: líneas principales de crudo y aislamiento de bombas o intercambiadores durante mantenimiento.',
     category: 'Válvulas',
   },
 ]
@@ -594,6 +594,32 @@ const textCards: QuizCard[] = [
     ],
     explanation: 'El nivel de precisión se usa para lograr "horizontalidad cuasi perfecta" en un eje, fundamental en la instalación y alineación de maquinaria rotativa. Medir espesores es función del ultrasonido o vernier; la elongación de pernos requiere torquímetro o extensómetro.',
     category: 'Herramientas',
+  },
+  {
+    id: 't013',
+    type: 'text',
+    question: '¿Qué características tiene la válvula Check (de retención)?',
+    options: [
+      { id: 'a', text: 'Permite flujo en un solo sentido, evitando el contraflujo', correct: true },
+      { id: 'b', text: 'No tiene actuador ni volante; opera automáticamente por diferencial de presión', correct: true },
+      { id: 'c', text: 'El tipo wafer/dual plate es compacta y se usa mucho en descarga de bombas', correct: true },
+      { id: 'd', text: 'Requiere señal 4–20 mA del sistema de control para operar', correct: false },
+    ],
+    explanation: 'La válvula check permite flujo en un solo sentido y opera automáticamente por diferencial de presión, sin volante ni actuador. El tipo wafer/dual plate es compacta y de respuesta rápida, muy usada en descarga de bombas para evitar el golpe de ariete. La señal 4–20 mA corresponde a las válvulas de control, no a las de retención.',
+    category: 'Válvulas',
+  },
+  {
+    id: 't014',
+    type: 'text',
+    question: '¿Qué características tiene la válvula de Control (Control Valve)?',
+    options: [
+      { id: 'a', text: 'Permite regulación fina y continua de flujo, presión, nivel o temperatura', correct: true },
+      { id: 'b', text: 'Trabaja junto con un posicionador y recibe señal del DCS/PLC (4–20 mA o 3–15 psi)', correct: true },
+      { id: 'c', text: 'Puede tener condición de falla-abre (FO) o falla-cierra (FC) ante pérdida de señal/aire', correct: true },
+      { id: 'd', text: 'Nunca se usa en lazos de control de proceso como PIC, FIC, LIC o TIC', correct: false },
+    ],
+    explanation: 'La válvula de control regula finamente flujo, presión, nivel o temperatura mediante un actuador (generalmente neumático) y un posicionador, recibiendo señal del DCS/PLC. Puede configurarse en falla-abre o falla-cierra como condición de seguridad. Se usa justamente en lazos de control como PIC, FIC, LIC y TIC en columnas de destilación, reactores e intercambiadores.',
+    category: 'Válvulas',
   },
 ]
 

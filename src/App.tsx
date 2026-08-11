@@ -83,6 +83,7 @@ export default function App() {
           c={c}
           onAnswer={handleAnswer}
           onNext={handleNext}
+          onRestart={restart}
         />
       )}
       {phase === 'results' && (

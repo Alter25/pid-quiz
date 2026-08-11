@@ -10,9 +10,10 @@ type Props = {
   c: Palette
   onAnswer: (correct: boolean) => void
   onNext: () => void
+  onRestart: () => void
 }
 
-export function QuizCard({ card, cardNumber, total, c, onAnswer, onNext }: Props) {
+export function QuizCard({ card, cardNumber, total, c, onAnswer, onNext, onRestart }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [answered, setAnswered] = useState(false)
   const [skipped, setSkipped] = useState(false)
@@ -81,13 +82,25 @@ export function QuizCard({ card, cardNumber, total, c, onAnswer, onNext }: Props
           </span>
           <span style={{ fontSize: 13, color: c.textMuted }}>/ {total}</span>
         </div>
-        <span style={{
-          fontSize: 12, fontWeight: 600, color: c.accent,
-          background: c.chipBg, padding: '5px 12px',
-          borderRadius: 999, letterSpacing: '0.03em', textTransform: 'uppercase',
-        }}>
-          {card.category}
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span style={{
+            fontSize: 12, fontWeight: 600, color: c.accent,
+            background: c.chipBg, padding: '5px 12px',
+            borderRadius: 999, letterSpacing: '0.03em', textTransform: 'uppercase',
+          }}>
+            {card.category}
+          </span>
+          <button
+            onClick={onRestart}
+            style={{
+              background: 'transparent', border: `1px solid ${c.cardBorder}`,
+              color: c.textMuted, fontSize: 12, fontWeight: 600,
+              padding: '5px 12px', borderRadius: 999, cursor: 'pointer',
+            }}
+          >
+            ↺ Volver a comenzar
+          </button>
+        </div>
       </div>
 
       {/* Progress bar */}
